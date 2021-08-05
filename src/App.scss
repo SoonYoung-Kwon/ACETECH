@@ -1,0 +1,19 @@
+.row{
+    display: flex;
+    height: 817px; // not F11 817px / F11 960px / media query
+}
+
+.header{
+    width: 1920px;
+    height: 120px;
+    background-color: #09111C;
+}
+
+.navbar-icons{
+    width: 85px;
+    background-color: #09111C;
+}    
+.navbar-menu{
+    width: 225px;
+    background-color: #102540;
+}

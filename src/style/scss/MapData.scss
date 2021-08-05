@@ -1,0 +1,245 @@
+// Font
+
+@font-face {
+    font-family: NanumSquare;
+    src: url('./../fonts/NanumSquare_acEB.ttf');
+}
+
+//Custom Scrollbar
+
+tbody::-webkit-scrollbar{
+    width: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+tbody::-webkit-scrollbar-track{
+    background-color: #353A3A;
+    border-radius: 5px;
+}
+
+.label_table::-webkit-scrollbar{
+    width: 10px;
+}
+
+.label_table::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.label_table::-webkit-scrollbar-track{
+    background-color: #353A3A;
+    border-radius: 5px;
+}
+
+.deep_table::-webkit-scrollbar{
+    width: 10px;
+}
+
+.deep_table::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.deep_table::-webkit-scrollbar-track{
+    background-color: #353A3A;
+    border-radius: 5px;
+}
+
+
+// Display Large Box
+
+.display_large{
+    width: 576px;
+    height: 709px;
+    border-radius: 10px;
+    margin: 27px;
+    padding: 27px;
+    background-color: #09111C;
+}
+
+// Display Small Box
+
+.display_small{
+    width: 382px;
+    height: 314px;
+    border-radius: 10px;
+    margin: 27px;
+    margin-left: 0px;
+    padding: 27px;
+    background-color: #09111C;
+}
+
+.title{
+    font-family: NanumSquare;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.biomass_table{
+    display: block;
+    width: 382px;
+    height: 240px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 30px;
+    font-family: NanumSquare;
+    font-size: 17px;
+    thead{
+        color: #00B050;
+        height: 40px;
+    }
+    tbody{
+        display: block;
+        width: 382px;
+        height: 210px;
+        overflow-y: scroll;
+        color: #FFFFFF;
+        tr{
+            height: 40px;
+        }
+    }
+    .w-25{
+        width: 25px;
+    }
+    .w-110{
+        width: 110px;
+    }
+    .w-80{
+        width: 80px;
+    }
+    .w-140{
+        width: 140px;
+    }
+}
+
+.carbon_table{
+    display: block;
+    width: 382px;
+    height: 240px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 30px;
+    font-family: NanumSquare;
+    font-size: 17px;
+    thead{
+        color: #00B050;
+        height: 40px;
+    }
+    tbody{
+        display: block;
+        width: 382px;
+        height: 210px;
+        overflow-y: scroll;
+        color: #FFFFFF;
+        tr{
+            height: 40px;
+        }
+    }
+    .w-25{
+        width: 25px;
+    }
+    .w-110{
+        width: 110px;
+    }
+    .w-80{
+        width: 80px;
+    }
+    .w-140{
+        width: 140px;
+    }
+}
+
+.label_table{
+    display: block;
+    width: 380px;
+    height: 250px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 30px;
+    overflow-y: scroll;
+    font-family: NanumSquare;
+    font-size: 12px;
+    padding-right: 20px;
+    tr{
+        height: 40px;
+        td{
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 290px;
+            overflow: hidden;
+            white-space : nowrap;
+            text-overflow: ellipsis;
+            color: #FFFFFF;
+        }
+    }
+    .w-90{
+        width: 90px;
+    }
+    .W-290{
+        width: 260px;
+    }
+}
+
+.deep_table{
+    display: block;
+    width: 380px;
+    height: 250px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 30px;
+    overflow-y: scroll;
+    font-family: NanumSquare;
+    font-size: 12px;
+    padding-right: 20px;
+    tr{
+        height: 40px;
+        td{
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 290px;
+            overflow: hidden;
+            white-space : nowrap;
+            text-overflow: ellipsis;
+            color: #FFFFFF;
+        }
+    }
+    .w-90{
+        width: 90px;
+    }
+    .W-290{
+        width: 260px;
+    }
+}
+
+.map{
+    border-radius: 15px;
+    background-color: #DDDDDD;
+    margin-top: 27px;
+    width: 576px;
+    height: 576px;
+    img{
+        margin: 13px;
+    }
+}
+
+.place_label{
+    margin-top: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: NanumSquare;
+    font-size: 30px;
+}
