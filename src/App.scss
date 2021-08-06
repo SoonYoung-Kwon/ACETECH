@@ -1,3 +1,10 @@
+// Font
+
+@font-face {
+    font-family: NanumSquare;
+    src: url('./style/fonts/NanumSquare_acEB.ttf');
+}
+
 .row{
     display: flex;
     height: 817px; // not F11 817px / F11 960px / media query
@@ -9,11 +16,22 @@
     background-color: #09111C;
 }
 
-.navbar-icons{
+.navbar-iconbar{
     width: 85px;
     background-color: #09111C;
 }    
-.navbar-menu{
+
+.navbar-menubar{
     width: 225px;
     background-color: #102540;
+    .active{
+        background-color: #005490;
+    }
+    .navbar-menu{
+        cursor: pointer;
+        padding: 23px;
+        font-family: NanumSquare;
+        font-size: 17px;
+        color: #FFFFFF;
+    }
 }
