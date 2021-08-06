@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function App() {
   
-  const [mode, setMode] = useState("B");
+  const [mode, setMode] = useState("A");
 
   const setA = () => {
     console.log('A');

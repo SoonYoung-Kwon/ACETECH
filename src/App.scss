@@ -14,11 +14,36 @@
     width: 1920px;
     height: 120px;
     background-color: #09111C;
+    .header-end{
+        position: absolute;
+        right: 0;
+    }
 }
 
-.navbar-iconbar{
+.logo{
+    margin-left: 85px;
+    margin-right: 85px;
+}
+
+.navbar-itembar{
     width: 85px;
     background-color: #09111C;
+    .navbar-item{
+        width: 85px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: NanumSquare;
+        font-size: 14px;
+        text-align: center;
+        color: #FFFFFF;
+        div{
+            margin-top: 10px;
+        }
+    }
+    .navbar-end{
+        position: absolute;
+        bottom: 0;
+    }
 }    
 
 .navbar-menubar{
