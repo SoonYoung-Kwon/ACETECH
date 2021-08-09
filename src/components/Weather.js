@@ -4,7 +4,13 @@ import Cloud from "./../style/images/001-cloudy day.png"
 export default function Weather() {
     return (
         <div className="display_small">
-            <div className="title">날씨</div>
+            <div className="title">
+                <span>날씨</span>
+                <span className="place_input">
+                    <input type="text"/>
+                    <button>입력</button>
+                </span>
+            </div>
             <div className="text_center">
                 <table className="location_table">
                     <thead>

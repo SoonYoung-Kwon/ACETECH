@@ -7,9 +7,19 @@ import MapData from "./components/MapData"
 
 import { useState } from "react";
 
+import axios from "axios"
+
 function App() {
   
   const [mode, setMode] = useState("A");
+
+  const [data, setData] = useState(null);
+
+  const onClick = () => {
+    axios.get('http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D&pageNo=1&numOfRows=10&dataType=XML&regId=11B00000&tmFc=202108090600').then(reponse => {
+      setData(reponse.data);
+    })
+  }
 
   const setA = () => {
     console.log('A');
@@ -38,6 +48,8 @@ function App() {
             <DronInfo/>
           }
         </div>
+        <button onClick={onClick}>asdf</button>
+        {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true}/>}
     </div>
   );
 }
