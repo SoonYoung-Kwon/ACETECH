@@ -13,13 +13,31 @@ function App() {
   
   const [mode, setMode] = useState("A");
 
-  const [data, setData] = useState(null);
+  /*const [data, setData] = useState({ // hook open api
+    day3: '',
+    day4: '',
+    day5: '',
+    day6: '',
+    day7: '',
+    day8: '',
+    day9: '',
+    day10: '',
+  });
 
-  const onClick = () => {
-    axios.get('http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D&pageNo=1&numOfRows=10&dataType=XML&regId=11B00000&tmFc=202108090600').then(reponse => {
-      setData(reponse.data);
+  const getWeather = (regId) => {
+    axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=202108100600`).then(response => {      setData({
+        ...data,
+        day3: response.data.response.body.items.item[0].wf3Pm,
+        day4: response.data.response.body.items.item[0].wf4Pm,
+        day5: response.data.response.body.items.item[0].wf5Pm,
+        day6: response.data.response.body.items.item[0].wf6Pm,
+        day7: response.data.response.body.items.item[0].wf7Pm,
+        day8: response.data.response.body.items.item[0].wf8,
+        day9: response.data.response.body.items.item[0].wf9,
+        day10: response.data.response.body.items.item[0].wf10
+      });
     })
-  }
+  }*/
 
   const setA = () => {
     console.log('A');
@@ -48,8 +66,9 @@ function App() {
             <DronInfo/>
           }
         </div>
-        <button onClick={onClick}>asdf</button>
+        <button onClick={onClick}>get</button>
         {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true}/>}
+        <button onClick={print_log}>log</button>
     </div>
   );
 }
