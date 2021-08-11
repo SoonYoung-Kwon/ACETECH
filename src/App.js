@@ -13,31 +13,54 @@ function App() {
   
   const [mode, setMode] = useState("A");
 
-  /*const [data, setData] = useState({ // hook open api
-    day3: '',
-    day4: '',
-    day5: '',
-    day6: '',
-    day7: '',
-    day8: '',
-    day9: '',
-    day10: '',
-  });
+  const [data, setData] = useState(['','','','','','','']);
 
   const getWeather = (regId) => {
-    axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=202108100600`).then(response => {      setData({
-        ...data,
-        day3: response.data.response.body.items.item[0].wf3Pm,
-        day4: response.data.response.body.items.item[0].wf4Pm,
-        day5: response.data.response.body.items.item[0].wf5Pm,
-        day6: response.data.response.body.items.item[0].wf6Pm,
-        day7: response.data.response.body.items.item[0].wf7Pm,
-        day8: response.data.response.body.items.item[0].wf8,
-        day9: response.data.response.body.items.item[0].wf9,
-        day10: response.data.response.body.items.item[0].wf10
-      });
+
+    const today = new Date()
+
+    const y = today.getFullYear()
+    const year = y.toString()
+
+    const m = today.getMonth() + 1
+    let month = m.toString()
+    if(month.length === 1){
+      month = '0' + month
+    }
+
+    const d = today.getDate()
+    let day = d.toString()
+    if(day.length === 1)
+      day = '0' + day
+
+    const h = today.getHours()
+    let hour
+    if(h < 17)
+      hour = '0600'
+    else
+      hour = '1800'
+    
+    const time = year + month + day + hour
+
+    const key = 'Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D'
+
+    if(regId === undefined)
+      regId = '11B00000';
+
+    axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
+      setData(
+        data => [
+          data[0] = response.data.response.body.items.item[0].wf3Pm,
+          data[1] = response.data.response.body.items.item[0].wf4Pm,
+          data[2] = response.data.response.body.items.item[0].wf5Pm,
+          data[3] = response.data.response.body.items.item[0].wf6Pm,
+          data[4] = response.data.response.body.items.item[0].wf7Pm,
+          data[5] = response.data.response.body.items.item[0].wf8,
+          data[6] = response.data.response.body.items.item[0].wf9,
+        ]
+      );
     })
-  }*/
+  }
 
   const setA = () => {
     console.log('A');
@@ -47,6 +70,7 @@ function App() {
   const setB = () => {
     console.log('B');
     setMode("B");
+    getWeather();
   }
 
   const setC = () => {
@@ -63,12 +87,9 @@ function App() {
             <MapData/>
           }
           {mode === "B" &&
-            <DronInfo/>
+            <DronInfo data={data} getWeather={getWeather}/>
           }
         </div>
-        <button onClick={onClick}>get</button>
-        {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true}/>}
-        <button onClick={print_log}>log</button>
     </div>
   );
 }

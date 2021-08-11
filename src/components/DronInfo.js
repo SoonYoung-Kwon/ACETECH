@@ -6,7 +6,7 @@ import DroneConsumablesInfo from "./DroneConsumablesInfo"
 import ShootingSchedule from "./ShootingSchedule"
 import Weather from "./Weather"
 
-export default function DronInfo() {
+export default function DronInfo( { data, getWeather } ) {
     return (
         <div className="row">
             <div>
@@ -18,7 +18,7 @@ export default function DronInfo() {
             </div>
             <div>
                 <ShootingSchedule/>
-                <Weather/>
+                <Weather data={data} getWeather={getWeather}/>
             </div>
         </div>
     )

@@ -1,7 +1,8 @@
 import React from "react";
 import Cloud from "./../style/images/001-cloudy day.png"
+import Rain from "./../style/images/009-rainy.png"
 
-export default function Weather() {
+export default function Weather( { data, getWeather } ) {
     return (
         <div className="display_small">
             <div className="title">
@@ -29,72 +30,42 @@ export default function Weather() {
                 </table>
                 <table className="weather_table">
                     <thead>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
-                        <td className="w-80">
-                            <img
-                                src={Cloud}
-                                width='60px'
-                                height='60px'
-                                alt=''
-                            />
-                        </td>
+                        {data.map((data, i) => {
+                            if(data === "흐림"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={Cloud}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else{
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={Rain}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                        })}
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span>SUN</span></td>
-                            <td><span>MON</span></td>
-                            <td><span>TUE</span></td>
-                            <td><span>WED</span></td>
-                            <td><span>THU</span></td>
-                            <td><span>FRI</span></td>
-                            <td><span>SAT</span></td>
+                            <td><span>3일 후</span></td>
+                            <td><span>4일 후</span></td>
+                            <td><span>5일 후</span></td>
+                            <td><span>6일 후</span></td>
+                            <td><span>7일 후</span></td>
+                            <td><span>8일 후</span></td>
+                            <td><span>9일 후</span></td>
                         </tr>
                     </tbody>
                 </table>
