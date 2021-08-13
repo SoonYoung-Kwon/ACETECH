@@ -19,35 +19,40 @@ function App() {
 
     const today = new Date()
 
-    const y = today.getFullYear()
-    const year = y.toString()
+    let y = today.getFullYear()
+    y = y.toString()
 
-    const m = today.getMonth() + 1
-    let month = m.toString()
-    if(month.length === 1){
-      month = '0' + month
+    let m = today.getMonth() + 1
+    m = m.toString()
+    if(m.length === 1)
+      m = '0' + m
+
+    let d = today.getDate()
+
+    let h = today.getHours()
+    if(5 < h && h < 18)
+      h = '0600'
+    else if(17 < h && h < 24)
+      h = '1800'
+    else{
+      h = '1800'
+      d = d - 1
     }
 
-    const d = today.getDate()
-    let day = d.toString()
-    if(day.length === 1)
-      day = '0' + day
-
-    const h = today.getHours()
-    let hour
-    if(h < 17)
-      hour = '0600'
-    else
-      hour = '1800'
+    d = d.toString()
+    if(d.length === 1)
+      d = '0' + d
     
-    const time = year + month + day + hour
+    const time = y + m + d + h
+
+    console.log(time)
 
     const key = 'Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D'
 
     if(regId === undefined)
       regId = '11B00000';
 
-    axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
+    axios.get(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
       setData(
         data => [
           data[0] = response.data.response.body.items.item[0].wf3Pm,

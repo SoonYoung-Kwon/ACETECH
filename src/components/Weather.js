@@ -1,6 +1,5 @@
 import React from "react";
-import Cloud from "./../style/images/001-cloudy day.png"
-import Rain from "./../style/images/009-rainy.png"
+import WeatherPack from "./WeatherPack"
 
 export default function Weather( { data, getWeather } ) {
     return (
@@ -31,11 +30,71 @@ export default function Weather( { data, getWeather } ) {
                 <table className="weather_table">
                     <thead>
                         {data.map((data, i) => {
-                            if(data === "흐림"){
+                            if(data === "맑음"){
                                 return(
                                     <td className="w-80">
                                         <img
-                                            src={Cloud}
+                                            src={WeatherPack.Sunny}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else if(data === "흐림"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={WeatherPack.DarkCloudy}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else if(data === "구름많음"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={WeatherPack.Cloudy}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else if(data === "구름많고 비" || data === "구름많고 소나기" || data === "흐리고 비" || data === "흐리고 소나기"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={WeatherPack.Rainy}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else if(data === "구름많고 눈" || data === "흐리고 눈"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={WeatherPack.Snowy}
+                                            width='60px'
+                                            height='60px'
+                                            alt=''
+                                        />
+                                    </td>
+                                )
+                            }
+                            else if(data === "구름많고 비/눈" || data === "흐리고 비/눈"){
+                                return(
+                                    <td className="w-80">
+                                        <img
+                                            src={WeatherPack.Fall}
                                             width='60px'
                                             height='60px'
                                             alt=''
@@ -47,7 +106,7 @@ export default function Weather( { data, getWeather } ) {
                                 return(
                                     <td className="w-80">
                                         <img
-                                            src={Rain}
+                                            src={WeatherPack.Cloudy}
                                             width='60px'
                                             height='60px'
                                             alt=''
@@ -59,13 +118,22 @@ export default function Weather( { data, getWeather } ) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span>3일 후</span></td>
-                            <td><span>4일 후</span></td>
-                            <td><span>5일 후</span></td>
-                            <td><span>6일 후</span></td>
-                            <td><span>7일 후</span></td>
-                            <td><span>8일 후</span></td>
-                            <td><span>9일 후</span></td>
+                            <td><span className="day">3일 후</span></td>
+                            <td><span className="day">4일 후</span></td>
+                            <td><span className="day">5일 후</span></td>
+                            <td><span className="day">6일 후</span></td>
+                            <td><span className="day">7일 후</span></td>
+                            <td><span className="day">8일 후</span></td>
+                            <td><span className="day">9일 후</span></td>
+                        </tr>
+                        <tr>
+                            <td><span className="weather_str">{data[0]}</span></td>
+                            <td><span className="weather_str">{data[1]}</span></td>
+                            <td><span className="weather_str">{data[2]}</span></td>
+                            <td><span className="weather_str">{data[3]}</span></td>
+                            <td><span className="weather_str">{data[4]}</span></td>
+                            <td><span className="weather_str">{data[5]}</span></td>
+                            <td><span className="weather_str">{data[6]}</span></td>
                         </tr>
                     </tbody>
                 </table>
