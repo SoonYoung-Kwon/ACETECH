@@ -45,14 +45,15 @@ function App() {
     
     const time = y + m + d + h
 
-    console.log(time)
+    if(regId === undefined)
+      regId = '11B00000'
 
     const key = 'Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D'
+    
+    console.log(time)
+    console.log(regId)
 
-    if(regId === undefined)
-      regId = '11B00000';
-
-    axios.get(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
+    axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
       setData(
         data => [
           data[0] = response.data.response.body.items.item[0].wf3Pm,

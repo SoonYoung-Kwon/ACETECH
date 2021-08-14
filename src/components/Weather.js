@@ -1,14 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
 import WeatherPack from "./WeatherPack"
 
 export default function Weather( { data, getWeather } ) {
+
+    const [hi,setHi] = useState("11B00000");
+
+    const changed = (e) => {
+        setHi(e.target.value)
+    }
+
     return (
         <div className="display_small">
             <div className="title">
                 <span>날씨</span>
                 <span className="place_input">
-                    <input type="text"/>
-                    <button>입력</button>
+                    <select onChange={changed}>
+                        <option value="11B00000">서울</option>
+                        <option value="11B00000">인천</option>
+                        <option value="11B00000">경기</option>
+                        <option value="11D10000">영서</option>
+                        <option value="11D20000">영동</option>
+                        <option value="11C20000">대전</option>
+                        <option value="11C20000">세종</option>
+                        <option value="11C20000">충남</option>
+                        <option value="11C10000">충북</option>
+                        <option value="11H10000">대구</option>
+                        <option value="11H10000">경북</option>
+                        <option value="11H20000">부산</option>
+                        <option value="11H20000">울산</option>
+                        <option value="11H20000">경남</option>
+                        <option value="11F20000">광주</option>
+                        <option value="11F20000">전남</option>
+                        <option value="11F10000">전북</option>
+                        <option value="11G00000">제주</option>
+                    </select>
+                    <button onClick={getWeather(hi)}>입력</button>
                 </span>
             </div>
             <div className="text_center">
