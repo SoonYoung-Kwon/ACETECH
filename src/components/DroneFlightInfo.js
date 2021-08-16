@@ -1,11 +1,38 @@
 import React from "react";
 import NumPack from "./NumPack"
 
+import { withScriptjs, withGoogleMap, GoogleMap, KmlLayer } from "react-google-maps";
+import { compose, withProps } from "recompose"
+
 export default function DroneFlightInfo() {
+    
+    const MyMap = compose(
+        withProps({
+          googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJwj9LqxdDIwG0GCcHZrht9jUCBdqyrco&v=3.exp&libraries=geometry,drawing,places",
+          loadingElement: <div style={{ height: `100px` }} />,
+          containerElement: <div style={{ width: `300px`, height: `300px` }} />,
+          mapElement: <div style={{ height: `100%` }} />,
+        }),
+        withScriptjs,
+        withGoogleMap
+      )(props =>
+        <GoogleMap
+          defaultZoom={30}
+          defaultCenter={{ lat: 38, lng: 128 }}
+          defaultStreetView={false}
+        >
+            <KmlLayer
+                url="https://www.google.com/maps/d/u/0/kml?mid=1bya2qrB8ljMyMMWzPeg07jzUxfc&nl=1&forcekml=1"
+                options={{ preserveViewport: false }}
+            />
+        </GoogleMap>
+      )
+
     return (
         <div className="display_small">
             <div className="title">드론 비행가능 구역정보</div>
-            <div className="text_center">
+            <MyMap/>
+            {/*<div className="text_center">
                 <table className="flight_table">
                     <thead>
                         <td className="w-25"></td>
@@ -107,7 +134,7 @@ export default function DroneFlightInfo() {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>*/}
         </div>
     )
 }
