@@ -45,13 +45,28 @@ function App() {
     
     const time = y + m + d + h
 
-    if(regId === undefined)
+    if(regId === undefined || regId === "서울" || regId === "인천" || regId === "경기")
       regId = '11B00000'
+    else if(regId === "영서")
+      regId = '11D10000'
+    else if(regId === "영동")
+      regId = '11D20000'
+    else if(regId === "대전" || regId === "세종" || regId === "충남")
+      regId = '11C20000'
+    else if(regId === "충북")
+      regId = '11C10000'
+    else if(regId === "광주" || regId === "전남")
+      regId = '11F20000'
+    else if(regId === "전북")
+      regId = '11F10000'
+    else if(regId === "대구" || regId === "경북")
+      regId = '11H10000'
+    else if(regId === "부산" || regId === "울산" || regId === "경남")
+      regId = '11H20000'
+    else if(regId === "제주")
+      regId = '11G00000'
 
     const key = 'Oiwk5g9q4GUwo4eToGL%2F9R58JtJAcqjI3uOiibklhV3SYYs%2BjBCzjIl6j6EEgszzeYVNUZNtzmDwff2IdDRHzQ%3D%3D'
-    
-    console.log(time)
-    console.log(regId)
 
     axios.get(`/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${key}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${time}`).then(response => {
       setData(

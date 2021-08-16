@@ -199,7 +199,7 @@ select::-webkit-scrollbar-track{
         border-radius: 5px;
     }
     .selecter_year{
-        width: 60x;
+        width: 60px;
         height: 25px;
         margin-left: 10px;
         margin-right: 10px;
@@ -310,23 +310,12 @@ select::-webkit-scrollbar-track{
 
 .place_input{
     float: right;
-    input{
-        border-radius: 5px;
-        width: 120px;
-        height: 20px;
-        text-align: center;
-    }
-    button{
-        cursor: pointer;
-        width: 40px;
+    select{
+        width: 60px;
         height: 25px;
-        border: none;
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: 12px;
-        font-weight: bold;
-        color: #FFFFFF;
-        background-color: #9B0707;
+        margin-left: 10px;
+        margin-right: 10px;
         border-radius: 5px;
+        text-align-last: center;
     }
 }
