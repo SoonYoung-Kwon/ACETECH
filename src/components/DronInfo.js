@@ -10,10 +10,10 @@ export default function DronInfo( { data, getWeather } ) {
     return (
         <div className="row">
             <div>
-                <RecentlyUsedDrone/>
+                <DroneFlightInfo/>
             </div>
             <div>
-                <DroneFlightInfo/>
+                <RecentlyUsedDrone/>
                 <DroneConsumablesInfo/>
             </div>
             <div>

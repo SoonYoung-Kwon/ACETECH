@@ -5,21 +5,29 @@ import { compose, withProps } from "recompose"
 
 export default function DroneFlightInfo() {
 
+    let ref
+
     const DroneFlightMap = compose(
         withProps({
           googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJwj9LqxdDIwG0GCcHZrht9jUCBdqyrco",
           loadingElement: <div style={{ height: `100px` }} />,
-          containerElement: <div style={{ width: `300px`, height: `300px` }} />,
-          mapElement: <div style={{ height: `100%` }} />,
+          containerElement: <div style={{ width: `576px`, height: `576px`, marginTop: `27px` }} />,
+          mapElement: <div style={{ height: `100%`, borderRadius: `15px` }} />,
         }),
         withScriptjs,
         withGoogleMap
       )(props =>
         <GoogleMap
+          ref={(mapRef) => ref = mapRef}
           defaultZoom={8}
-          defaultCenter={{ lat: 38, lng: 128 }}
+          defaultCenter={{ lat: 37.2, lng: 127.4 }}
           options={{
                 disableDefaultUI: true
+          }}
+          onCenterChanged={() => {
+            let result = JSON.parse(JSON.stringify(ref.getCenter()))
+            document.getElementById("lat").innerHTML = result.lat.toFixed(7)
+            document.getElementById("lng").innerHTML = result.lng.toFixed(7)
           }}
         >
             <KmlLayer
@@ -30,9 +38,13 @@ export default function DroneFlightInfo() {
       )
 
     return (
-        <div className="display_small">
+        <div className="display_large">
             <div className="title">드론 비행가능 구역정보</div>
             <DroneFlightMap/>
+            <div className="place_position">
+              N : <span id="lat"></span><br/>
+              E : <span id="lng"></span>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 // Font
 
- @font-face {
+@font-face {
     font-family: NanumSquare;
      src: url('./../fonts/NanumSquare_acEB.ttf');
  }
@@ -318,4 +318,12 @@ select::-webkit-scrollbar-track{
         border-radius: 5px;
         text-align-last: center;
     }
+}
+
+.place_position{
+    margin-top: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: NanumSquare;
+    font-size: 20px;
 }

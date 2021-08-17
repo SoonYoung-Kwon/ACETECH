@@ -3,13 +3,13 @@ import Drone from "./../style/images/drone.png";
 
 export default function RecentlyUsedDrone() {
     return (
-        <div className="display_large">
+        <div className="display_small">
             <div className="title">최근 사용한 드론</div>
             <div className="text_center">
                 <img
                     src={Drone}
-                    width='400px'
-                    height='350px'
+                    width='200px'
+                    height='150px'
                     alt=''
                 />
                 <div className="title">Phantom Pro V2.0</div>
