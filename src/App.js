@@ -4,6 +4,7 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import DronInfo from "./components/DronInfo"
 import MapData from "./components/MapData"
+import UserInfo from './components/UserInfo'
 
 import { useState } from "react";
 
@@ -109,6 +110,9 @@ function App() {
           }
           {mode === "B" &&
             <DronInfo data={data} getWeather={getWeather}/>
+          }
+          {mode === "C" &&
+            <UserInfo/>
           }
         </div>
     </div>

@@ -7,9 +7,11 @@ export default function DroneFlightInfo() {
 
     let ref
 
+    const key = "AIzaSyCJwj9LqxdDIwG0GCcHZrht9jUCBdqyrco"
+
     const DroneFlightMap = compose(
         withProps({
-          googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJwj9LqxdDIwG0GCcHZrht9jUCBdqyrco",
+          googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${key}`,
           loadingElement: <div style={{ height: `100px` }} />,
           containerElement: <div style={{ width: `576px`, height: `576px`, marginTop: `27px` }} />,
           mapElement: <div style={{ height: `100%`, borderRadius: `15px` }} />,
@@ -20,7 +22,7 @@ export default function DroneFlightInfo() {
         <GoogleMap
           ref={(mapRef) => ref = mapRef}
           defaultZoom={8}
-          defaultCenter={{ lat: 37.2, lng: 127.4 }}
+          defaultCenter={{ lat: 37.2622222, lng: 127.0288899 }}
           options={{
                 disableDefaultUI: true
           }}
@@ -42,8 +44,8 @@ export default function DroneFlightInfo() {
             <div className="title">드론 비행가능 구역정보</div>
             <DroneFlightMap/>
             <div className="place_position">
-              N : <span id="lat"></span><br/>
-              E : <span id="lng"></span>
+              <div>N : <span id="lat">37.2000000</span></div>
+              <div>E : <span id="lng">127.4000000</span></div>
             </div>
         </div>
     )

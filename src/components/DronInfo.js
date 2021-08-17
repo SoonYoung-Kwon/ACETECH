@@ -7,6 +7,7 @@ import ShootingSchedule from "./ShootingSchedule"
 import Weather from "./Weather"
 
 export default function DronInfo( { data, getWeather } ) {
+
     return (
         <div className="row">
             <div>

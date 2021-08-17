@@ -1,0 +1,139 @@
+// Font
+
+@font-face {
+    font-family: NanumSquare;
+     src: url('./../fonts/NanumSquare_acEB.ttf');
+ }
+
+//Custom Scrollbar
+
+tbody::-webkit-scrollbar{
+    width: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+tbody::-webkit-scrollbar-track{
+    background-color: #353A3A;
+    border-radius: 5px;
+}
+
+// Displat largest
+
+.display_largest{
+    width: 845px;
+    height: 709px;
+    border-radius: 10px;
+    margin: 27px;
+    margin-right: 0px;
+    padding: 27px;
+    background-color: #09111C;
+}
+
+// Display Large Box
+
+.display_large{
+    width: 576px;
+    height: 709px;
+    border-radius: 10px;
+    margin: 27px;
+    padding: 27px;
+    background-color: #09111C;
+}
+
+.title{
+    font-family: NanumSquare;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.userList_table{
+    display: block;
+    width: 845px;
+    height: 650px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 35px;
+    font-family: NanumSquare;
+    font-size: 17px;
+    border-spacing: 0px;
+    thead{
+        color: #00B050;
+        height: 40px;
+    }
+    tbody{
+        display: block;
+        width: 845px;
+        height: 600px;
+        overflow-y: scroll;
+        color: #FFFFFF;
+        tr{
+            height: 40px;
+        }
+        :hover{
+            background-color: #353A3A;
+            cursor: pointer;
+        }
+    }
+    .w-40{
+        width: 40px;
+        padding: 5px;
+    }
+    .w-150{
+        width: 150px;
+    }
+    .w-200{
+        width: 200px;
+    }
+    .w-100{
+        width: 100px;
+    }
+    .w-110{
+        text-align: center;
+        width: 100px;
+        padding-right: 10px;
+        max-width: 100px;
+        overflow: hidden;
+        white-space : nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.user_picture{
+    border-radius: 15px;
+    background-color: #DDDDDD;
+    margin-top: 27px;
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+}
+
+.userdetail_table{
+    width: 350px;
+    height: 250px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: NanumSquare;
+    font-size: 17px;
+    border: none;
+    tr{
+        height: 40px;
+        .head{
+            color: #00B050;
+        }
+        .body{
+            color: #FFFFFF;
+        }
+    }
+}

@@ -31,7 +31,7 @@ export default function RecentlyLabelsPath() {
                                     alt=''
                                 />
                             </td>
-                            <td>C:\temp\label1\data123\ABC\DEF\...asdfasdasdfasdfsdafsdaasdfasfdf</td>
+                            <td>C:\temp\label1\data123\ABC\DEF\asdfasdasdfasdfsdafsdaasdfasfdf</td>
                         </tr>
                         <tr>
                             <td>

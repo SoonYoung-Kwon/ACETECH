@@ -12,9 +12,6 @@ export default function Header() {
                     alt=''
                 />
             </div>
-            <div className="header-end">
-                asdf
-            </div>
         </div>
     )
 }

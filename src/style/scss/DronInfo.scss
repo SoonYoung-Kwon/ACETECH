@@ -89,61 +89,33 @@ select::-webkit-scrollbar-track{
 }
 
 .drone_table{
-    width: 500px;
-    height: 220px;
+    display: block;
+    width: 382px;
+    height: 90px;
     margin-left:auto; 
     margin-right:auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
     font-family: NanumSquare;
     font-size: 17px;
     border: none;
-    .head{
-        color: #00B050;
-        padding-right: 20px;
-        text-align: right;
-    }
-    .body{
-        color: #FFFFFF;
-        padding-left: 20px;
-        text-align: left;
-    }
-}
-
-.flight_table{
-    display: block;
-    width: 382px;
-    height: 240px;
-    margin-left:auto; 
-    margin-right:auto;
-    margin-top: 30px;
-    font-family: NanumSquare;
-    font-size: 17px;
-    thead{
-        color: #00B050;
-        height: 40px;
-    }
     tbody{
         display: block;
         width: 382px;
-        height: 210px;
+        height: 80px;
         overflow-y: scroll;
-        color: #FFFFFF;
         tr{
             height: 40px;
+            .head{
+                color: #00B050;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .body{
+                color: #FFFFFF;
+                padding-left: 10px;
+                padding-right: 15px;
+            }
         }
-    }
-    .w-25{
-        width: 25px;
-    }
-    .w-110{
-        width: 110px;
-    }
-    .w-80{
-        width: 80px;
-    }
-    .w-140{
-        width: 140px;
     }
 }
 
@@ -326,4 +298,7 @@ select::-webkit-scrollbar-track{
     color: #FFFFFF;
     font-family: NanumSquare;
     font-size: 20px;
+    div{
+        margin: 10px;
+    }
 }
